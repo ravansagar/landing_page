@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mero IRD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#4988C4] text-slate-900 antialiased" x-data="{ mobileMenuOpen: false }">
+    <nav class="top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-[60px] flex justify-between items-center h-14 md:h-20">
+            <div class="flex items-center gap-2">
+                <div class="">
+                    <img src="/images/logo.svg" alt="" class="brightness-0 invert pt-2">
+                </div>
+                <span class="font-bold font-['Inter'] text-xl text-white pt-2 tracking-tight">Mero Billing</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">Home</a>
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">About
+                    Us</a>
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">Contact
+                    Us</a>
+            </div>
+
+            <div class="hidden md:flex space-x-2 font-medium">
+                <a href="#"
+                    class="bg-white px-4 py-2 mx-2 rounded-md font-['Inter'] font-medium text-[#4988C4] leading-6 tracking-normal">Sign
+                    in</a>
+                <a href="#"
+                    class="bg-none px-4 py-2 border rounded-md font-['Inter'] font-medium text-base text-white leading-6 tracking-normal">Sign
+                    up</a>
+            </div>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-white">
+                <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-[#4988C4] px-6 py-8 space-y-4 shadow-md">
+            <a href="#" class="block text-lg text-white font-medium">Home</a>
+            <a href="#" class="block text-lg text-white font-medium">About Us</a>
+            <a href="#" class="block text-lg text-white font-medium">Contact Us</a>
+            <button class="w-full font-['Inter'] bg-white text-[#4988C4] py-3 rounded-lg font-bold">Sign in</button>
+            <button class="w-full text-white bg-[#4988C4] py-3 rounded-lg border border font-bold">Sign up</button>
+        </div>
+    </nav>
+
+    <section class="w-full bg-[#4988C4] overflow-hidden bg-white">
+        <div class="max-w-7xl mx-auto ">
+            <div
+                class="w-full mx-auto flex flex-col md:flex-row items-center px-6 md:px-[60px] shadow-xl [clip-path:inset(0px_0px_-2px_0px)]">
+                <div class="md:w-[60%] w-full h-full py-12 md:py-0 z-10">
+                    <h2 class="font-bold text-2xl md:text-5xl text-[#4988C4] mb-4">
+                        Empowering Tax Solutions for a Digital Nepal
+                    </h2>
+                    <p class="text-[#4988C4] text-md md:text-2xl mb-8">Manage your taxes with ease and efficiency.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-8">
+                        <button class="px-8 md:px-12 py-3 bg-[#4988C4] text-white rounded-lg font-bold">
+                            Get Started
+                        </button>
+                        <button
+                            class="px-8 md:px-12 py-3 border-2 border-[#4988C4] text-[#4988C4] rounded-lg font-bold">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+
+                <div class="md:w-[80%] w-full md:-ml-[40%] h-full flex items-center justify-end">
+                    <img src="./images/dashboard.svg" alt="Dashboard" class="h-full w-full object-contain opacity-50">
+                </div>
+            </div>
+
+            <div class="md:pl-[60px] mx-auto z-10 -mt-7 z-10">
+                <div class="flex flex-col md:flex-row gap-1 md:gap-0">
+                    <div
+                        class="w-full md:w-[261px] text-sm md:h-[60px] py-2 px-6 md:py-4 bg-[#E4EDF6] text-black border-x-1 border-gray-400 rounded-bl-[2px] flex items-center z-10 shadow-lg">
+                        IRD Compliant System
+                    </div>
+                    <div
+                        class="w-full md:w-[261px] text-sm md:h-[60px] py-2 px-6 md:py-4 bg-[#E4EDF6] text-black  border-r-1 border-black rounded-bl-[2px] flex items-center z-10 shadow-lg">
+                        Built for Nepal Tax System
+                    </div>
+                    <div
+                        class="w-full md:w-[261px] text-sm md:h-[60px] py-2 px-6 md:py-4 bg-[#E4EDF6] text-black  border-r-1 border-gray-400 rounded-bl-[2px] flex items-center z-10 shadow-lg">
+                        Secure & Reliable
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full relative bg-white">
+        <div class="max-w-7xl mx-auto py-8 relative z-10 mx-auto md:px-[60px] px-6">
+            <div>
+                <div class="flex flex-col sm:flex-row sm:items-center">
+                    <span class="whitespace-nowrap text-xl sm:text-3xl font-semibold text-[#4988C4]">
+                        Explore Our Tax Services
+                    </span>
+                    <div class="mt-2 sm:mt-0 sm:ml-4 h-[2px] flex-grow bg-[#4988C4]"></div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-4 md:py-10" x-data="{
+                services:[
+                        {description: 'Generate clear tax reports quickly for filing and audits.', img:'images/services/tax.svg', title:'Tax Reports'},
+                        {description: 'Create and manage invoices for smooth daily operations', img:'images/services/bill.svg', title:'Billing & Invoicing'},
+                        {description: 'Create accurate digital bills & invoices instantly, effortlessly', img:'images/services/computer.svg', title:'Computerized Billing'},
+                        {description: 'Stay aligned with IRD standards and maintain accurate records.', img:'images/services/ird.svg', title:'IRD Complaint'},
+                    ]
+                }">
+
+                    <template x-for="(item, index) in services" :key="index">
+                        <div
+                            class="bg-[#4988C4] rounded-xl p-4 md:p-6 md:min-h-[16rem] flex flex-col items-center justify-center border border-white/20">
+                            <div class="mb-4">
+                                <img :src="item.img" :alt="item.title"
+                                    class="h-16 md:h-20 w-auto object-contain brightness-0 invert">
+                            </div>
+                            <h2 class="w-full text-center font-semibold text-md md:text-xl text-[#FCFDFD] pb-2"
+                                x-text="item.title"></h2>
+                            <div class="flex justify-start">
+                                <p class="text-[#FCFDFD] text-sm md:text-lg leading-snug md:leading-tight"
+                                    x-text="item.description"></p>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="pt-6">
+                <div class="flex flex-col sm:flex-row sm:items-center">
+                    <span class="whitespace-nowrap text-xl sm:text-3xl font-semibold text-[#4988C4]">
+                        How It Works
+                    </span>
+                    <div class="mt-2 sm:mt-0 sm:ml-4 h-[2px] flex-grow bg-[#4988C4]"></div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 items-center">
+
+                    <div class="w-full md:w-1/2 flex justify-center">
+                        <img src="./images/computer.png" alt="Device" class="h-2xl object-contain pr-6 md:px-auto">
+                    </div>
+
+                    <div class="w-full md:w-1/2 flex flex-col gap-4" x-data="{
+                    how:[
+                            {sn:'1', data:'Get username from MeroDokan'},
+                            {sn:'2', data:'Set up IRD credentials'},
+                            {sn:'3', data:'Start creating bills'},
+                            {sn:'4', data:'Automatic data sync'},
+                        ]
+                    }">
+                        <template x-for="(item, index) in how" :key="index">
+                            <div
+                                class="flex items-center w-full border-2 rounded-xl border-[#4988C4] px-4 py-3 md:p-6 bg-white/5">
+                                <span
+                                    class="flex items-center justify-center w-8 h-8 shrink-0 bg-[#2C5276] text-white rounded-full text-md font-bold"
+                                    x-text="item.sn"></span>
+                                <span class="pl-4 text-[#4E4E4E] text-md md:text-xl font-medium"
+                                    x-text="item.data"></span>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mx-auto mt-6" x-data="{ 
+                    pricing: [
+                        { title: 'Trading & Godown', description: 'Sales & stocks in one place', price: '13,000', img: '/images/pricing/trading.svg' },
+                        { title: 'Manufacture', description: 'Easy production tracking', price: '6,000', img: '/images/pricing/manufacture.svg' },
+                        { title: 'VAT Features', description: 'Automatic VAT & Reports', price: '13,000', img: '/images/pricing/vat.svg' },
+                        { title: 'POS', description: 'Includes 2 POS terminals', price: '13,000', img: '/images/pricing/POS.svg' },
+                        { title: 'Branch', description: 'Supports upto 3 branches', price: '25,000', img: '/images/pricing/branch.svg' },
+                    ] 
+                }">
+                <div class="flex flex-col sm:flex-row sm:items-center">
+                    <span class="text-xl sm:text-3xl font-semibold text-[#4988C4] leading-tight">
+                        Flexible Pricing Based on Business Needs
+                    </span>
+                    <div class="mt-2 sm:mt-0 sm:ml-4 h-[2px] flex-grow bg-[#4988C4]"></div>
+                </div>
+                <h2 class="text-lg md:text-xl text-[#4E4E4E] py-2 tracking-tight">
+                    Choose the modules you need or get the complete system with all features
+                </h2>
+                <h2 class="bg-[#EDEDED] w-fit px-4 py-2 rounded-md text-[#4E4E4E] text-sm md:text-md">
+                    All prices including VAT
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-5 pt-6 gap-2 md:overflow-hidden bg-white">
+                    <template x-for="(item, index) in pricing" :key="index">
+                        <div class="bg-[#FCFDFD] p-3 rounded-md border-2 border-[#E4E4E4] shadow-sm">
+                            <div class="w-12 h-12 flex items-center justify-center mb-2">
+                                <img :src="item.img" />
+                            </div>
+                            <h3 class="text-xl font-bold text-[#4E4E4E] text-md md:text-lg" x-text="item.title"></h3>
+                            <p class="text-[#4E4E4E] leading-relaxed text-sm md:text-md" x-text="item.description"></p>
+                            <h3 class="text-[#4988C4] font-semibold text-lg md:text-lg" x-text="item.price"></h3>
+                            <div class="mx-auto justify-center pt-3">
+                                <button
+                                    class="text-[#4988C4] hover:bg-[#4988C4] hover:text-white font-md md:text-md w-full py-2 rounded-md border border-[#4988C4]">Try
+                                    Now</button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+    </section>
+
+    <section class="w-full relative bg-[#EDF3F9]">
+        <div class="max-w-7xl mx-auto py-8 relative z-10 mx-auto md:px-[60px] px-6">
+            <div class="mx-auto pt-8" x-data="{
+                addOns:[
+                    { title:'Limited User', description: '(Company Rights)', discount:'+10%', img:'images/addOns/users.svg'},
+                    { title:'Each Branch', description: '(Includes 3 branches)', discount:'+25%', img:'images/addOns/branch.svg'},
+                ]
+            }">
+                <div class="flex flex-col md:flex-row gap-2">
+                    <h2 class="text-xl md:text-3xl md:pr-24 md:py-4 font-semibold text-[#4988C4] tracking-tight">
+                        Additional Add-Ons
+                    </h2>
+                    <template x-for="(item, index) in addOns" :key="index">
+                        <div class="flex border-2 border-[#E4E4E4] rounded-md shadow-sm px-3 py-4 bg-white">
+                            <div class="w-8 md:w-14 flex-none flex items-center"><img :src="item.img" /></div>
+                            <div class="w-32 md:w-40 pl-3 md:pl-auto pt-2 flex-auto">
+                                <h2 class="text-[#4E4E4E] font-semibold text-md md:text-lg" x-text="item.title"></h2>
+                                <h3 class="text-[#4E4E4E] font-medium text-sm md:text-md" x-text="item.description">
+                                </h3>
+                            </div>
+                            <div class="w-20 md:w-32 flex-auto flex flex-col items-end justify-center">
+                                <h2 class="text-[#4988C4] font-semibold text-md md:text-lg" x-text="item.discount"></h2>
+                                <h3 class="text-[#4988C4] font-medium text-sm md:text-md flex justify-end">of base price
+                                </h3>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full relative bg-white">
+        <div class="max-w-7xl mx-auto py-8 relative z-10 mx-auto md:px-[60px] px-6">
+            <div class="mx-auto py-8" x-data="{
+                testimonials:[
+                    { name:'User 1', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
+                    { name:'User 2', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
+                    { name:'User 3', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'}
+                ]
+            }">
+                <div class="flex flex-col sm:flex-row sm:items-center pb-8">
+                    <h2 class="text-xl md:text-3xl md:py-4 font-semibold text-[#4988C4] tracking-tight">
+                        Testimonials
+                    </h2>
+                    <div class="mt-2 sm:mt-0 sm:ml-4 h-[2px] flex-grow bg-[#4988C4]"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <template x-for="(user, index) in testimonials" :key="index">
+                        <div class="border-2 border-[#E4E4E4] rounded-md shadow-sm px-6 py-4">
+                            <div class="flex flex-row gap-0 pb-1" x-data="{}">
+                                <template x-for="i in 5" :key="i">
+                                    <img src="images/star.svg" class="w-6" />
+                                </template>
+                            </div>
+                            <div class="w-full py-2">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.4471 0.000831604C21.4471 0.463333 21.4835 0.850832 21.4305 1.225C21.4082 1.38417 21.2236 1.555 21.0721 1.65083C20.3379 2.12 19.5407 2.495 18.8561 3.03333C16.641 4.77667 15.3282 7.07167 15.2561 10.0533C15.2363 10.8992 15.5459 11.1117 16.2511 10.7808C18.2899 9.82917 20.4827 10.3875 21.6524 12.1558C22.928 14.0858 22.7483 16.6558 21.2194 18.3408C19.2675 20.4925 16.0541 20.5575 13.8382 18.5008C12.5112 17.2692 11.8805 15.6792 11.7232 13.87C11.1959 7.81084 14.2148 2.81583 19.7104 0.621666C20.2542 0.405001 20.8113 0.226665 21.4471 0.000831604Z"
+                                        fill="#C8C8C8" />
+                                    <path
+                                        d="M9.78313 0.000831604C9.78313 0.463333 9.81955 0.850832 9.76657 1.225C9.74422 1.38417 9.55963 1.555 9.40815 1.65083C8.67391 2.12 7.87676 2.495 7.19219 3.03333C4.97707 4.77667 3.66421 7.07167 3.5922 10.0533C3.57233 10.8992 3.88192 11.1117 4.58718 10.7808C6.62599 9.82917 8.81877 10.3875 9.98842 12.1558C11.264 14.0858 11.0844 16.6558 9.55549 18.3408C7.6036 20.4925 4.39017 20.5575 2.17422 18.5008C0.847294 17.2692 0.216528 15.6792 0.0592508 13.87C-0.468042 7.81084 2.55086 2.81583 8.04646 0.621666C8.59031 0.405001 9.1474 0.226665 9.78313 0.000831604Z"
+                                        fill="#C8C8C8" />
+                                </svg>
+                            </div>
+                            <h2 class="text-[#213D58] text-lg md:text-xl font-medium justify px-4"
+                                x-text="user.description"></h2>
+                            <div class="flex items-center justify-end w-full py-2">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.05304 19.9993C1.05304 19.5368 1.01662 19.1493 1.0696 18.7751C1.09195 18.6159 1.27654 18.4451 1.42802 18.3493C2.16226 17.8801 2.95941 17.5051 3.64398 16.9668C5.85911 15.2234 7.17196 12.9284 7.24398 9.94676C7.26384 9.10093 6.95426 8.88843 6.24899 9.21926C4.21018 10.1709 2.0174 9.61259 0.847752 7.84426C-0.427851 5.91426 -0.248224 3.34426 1.28068 1.65925C3.23257 -0.492414 6.446 -0.557414 8.66196 1.49925C9.98888 2.73092 10.6196 4.32092 10.7769 6.13009C11.3042 12.1893 8.28532 17.1843 2.78971 19.3784C2.24587 19.5951 1.68877 19.7734 1.05304 19.9993Z"
+                                        fill="#C8C8C8" />
+                                    <path
+                                        d="M12.717 19.9993C12.717 19.5368 12.6806 19.1493 12.7335 18.7751C12.7559 18.6159 12.9405 18.4451 13.092 18.3493C13.8262 17.8801 14.6233 17.5051 15.3079 16.9668C17.523 15.2234 18.8359 12.9284 18.9079 9.94676C18.9278 9.10093 18.6182 8.88843 17.9129 9.21926C15.8741 10.1709 13.6813 9.61259 12.5117 7.84426C11.2361 5.91426 11.4157 3.34426 12.9446 1.65925C14.8965 -0.492414 18.1099 -0.557414 20.3259 1.49925C21.6528 2.73092 22.2836 4.32092 22.4409 6.13009C22.9682 12.1893 19.9493 17.1843 14.4537 19.3784C13.9098 19.5951 13.3527 19.7734 12.717 19.9993Z"
+                                        fill="#C8C8C8" />
+                                </svg>
+                            </div>
+                            <hr class="border-1 text-[#C8C8C8] border-[#C8C8C8]">
+                            <div class="flex justify-between items-center py-2">
+                                <h1 class="text-[#4988C4] font-medium text-lg md:text-xl" x-text="user.name"></h1>
+                                <h2 class="text-[#C8C8C8] font-medium text-md md:text-lg" x-text="user.role"></h2>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="mx-auto pb-4">
+                <div class="flex flex-col sm:flex-row sm:items-center">
+                    <h2 class="text-xl md:text-3xl md:py-4 font-semibold text-[#4988C4] tracking-tight">
+                        Contact Us
+                    </h2>
+                    <div class="mt-2 sm:mt-0 sm:ml-4 h-[2px] flex-grow bg-[#4988C4]"></div>
+                </div>
+                <div class="flex flex-col pt-4 justify gap-2">
+                    <h2 class="text-xl font-medium text-[#213D58]">Need Help? Call our toll-free number.</h2>
+                    <a href="tel:18105000323" class="flex">
+                        <svg width="28" height="28" class="h-5 pr-1 md:h-auto" viewBox="0 0 28 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2.33325C16.7848 2.33325 19.4555 3.4395 21.4246 5.40863C23.3938 7.37776 24.5 10.0485 24.5 12.8333V19.8333C24.5003 20.5892 24.2559 21.3248 23.8034 21.9303C23.3508 22.5358 22.7144 22.9784 21.9893 23.1921C21.1983 25.4099 17.8617 26.8333 14 26.8333C13.6906 26.8333 13.3938 26.7103 13.175 26.4915C12.9562 26.2728 12.8333 25.976 12.8333 25.6666C12.8333 25.3572 12.9562 25.0604 13.175 24.8416C13.3938 24.6228 13.6906 24.4999 14 24.4999C16.2038 24.4999 18.0623 23.9376 19.0563 23.2458C18.2829 23.0697 17.5923 22.6361 17.0976 22.0161C16.6028 21.3961 16.3334 20.6264 16.3333 19.8333L16.3345 16.2738L16.3392 16.2143C16.3686 15.3073 16.7496 14.4473 17.4017 13.8163C18.0539 13.1853 18.9259 12.8328 19.8333 12.8333H21C21.4095 12.8333 21.8027 12.9033 22.1667 13.0328V12.8333C22.1677 10.6909 21.3269 8.63389 19.8254 7.1057C18.3239 5.57752 16.2821 4.70053 14.14 4.6638C11.998 4.62707 9.92725 5.43353 8.37426 6.90934C6.82128 8.38515 5.91041 10.4121 5.838 12.5533L5.83333 13.0316C6.1985 12.9033 6.59167 12.8333 7 12.8333H8.16667C9.09492 12.8333 9.98516 13.202 10.6415 13.8584C11.2979 14.5148 11.6667 15.405 11.6667 16.3333V19.8333C11.6667 20.7615 11.2979 21.6517 10.6415 22.3081C9.98516 22.9645 9.09492 23.3333 8.16667 23.3333H7C6.07174 23.3333 5.1815 22.9645 4.52513 22.3081C3.86875 21.6517 3.5 20.7615 3.5 19.8333V12.8333C3.5 10.0485 4.60625 7.37776 6.57538 5.40863C8.54451 3.4395 11.2152 2.33325 14 2.33325Z"
+                                fill="#4988C4" />
+                        </svg>
+                        <span class="text-[#4988C4] text-md md:text-xl">18105000323</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full relative px-8 md:px-16 pb-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 py-8 md:px-8 gap-4 overflow-hidden">
+                <div class="flex flex-col gap-1 col-span-2">
+                    <div class="flex flex-row gap-2">
+                        <img src="/images//logo.svg" class="w-8" />
+                        <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl">Mero IRD</h2>
+                    </div>
+                    <h2 class="text-[#FCFDFD] text-xs md:text-lg pt-1">Stay IRD-Compliant with Ease.</h2>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl">Quick Links</h2>
+                    <a href="#" class="text-[#FCFDFD] text-sm md:text-lg">Services</a>
+                    <a href="#" class="text-[#FCFDFD] text-sm md:text-lg">Contact Us</a>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl">Legal</h2>
+                    <a href="#" class="text-[#FCFDFD] text-sm md:text-lg">Privacy Policy</a>
+                    <a href="#" class="text-[#FCFDFD] text-sm md:text-lg">Terms and conditions</a>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl">Contact Info</h2>
+                    <h3 class="flex gap-2 text-[#FCFDFD] text-sm md:text-lg">
+                        <svg width="15" height="20" class="h-4 md:h-auto" viewBox="0 0 15 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.5 0C5.51088 0 3.60322 0.737498 2.1967 2.05025C0.790176 3.36301 0 5.14348 0 7C0 12.25 7.5 20 7.5 20C7.5 20 15 12.25 15 7C15 5.14348 14.2098 3.36301 12.8033 2.05025C11.3968 0.737498 9.48912 0 7.5 0ZM7.5 9.5C6.97023 9.5 6.45235 9.35338 6.01187 9.07867C5.57138 8.80397 5.22806 8.41352 5.02532 7.95671C4.82259 7.49989 4.76954 6.99723 4.8729 6.51227C4.97625 6.02732 5.23136 5.58186 5.60596 5.23223C5.98057 4.8826 6.45784 4.6445 6.97744 4.54804C7.49703 4.45157 8.0356 4.50108 8.52505 4.6903C9.01449 4.87952 9.43283 5.19995 9.72715 5.61107C10.0215 6.0222 10.1786 6.50555 10.1786 7C10.1786 7.3283 10.1093 7.65339 9.97468 7.95671C9.84007 8.26002 9.64276 8.53562 9.39404 8.76777C9.14531 8.99991 8.85002 9.18406 8.52505 9.3097C8.20007 9.43534 7.85175 9.5 7.5 9.5Z"
+                                fill="#FCFDFD" />
+                        </svg>
+                        Tikathali, Lalitpur
+                    </h3>
+                    <h3 class="flex gap-2 text-[#FCFDFD] text-sm md:text-lg"><svg width="20" height="20"
+                            class="h-5 md:h-auto" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.025 12.7166L13.9083 12.475C13.6594 12.4457 13.4071 12.4733 13.1704 12.5556C12.9337 12.6378 12.7187 12.7727 12.5416 12.95L11.0083 14.4833C8.6428 13.2799 6.72002 11.3571 5.51664 8.99164L7.05831 7.44997C7.41664 7.09164 7.59164 6.59164 7.53331 6.0833L7.29164 3.9833C7.24457 3.57671 7.04953 3.20166 6.74369 2.92963C6.43786 2.65761 6.04261 2.50763 5.63331 2.5083H4.19164C3.24997 2.5083 2.46664 3.29164 2.52497 4.2333C2.96664 11.35 8.65831 17.0333 15.7666 17.475C16.7083 17.5333 17.4916 16.75 17.4916 15.8083V14.3666C17.5 13.525 16.8666 12.8166 16.025 12.7166Z"
+                                fill="#FCFDFD" />
+                        </svg> 098765434567
+                    </h3>
+                    </h3>
+                    <h3 class="flex gap-2 text-[#FCFDFD] text-sm md:text-lg">
+                        <svg width="20" height="20" class="h-5 md:h-auto" viewBox="0 0 20 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 1.6665C11.9891 1.6665 13.8968 2.45668 15.3033 3.8632C16.7098 5.26973 17.5 7.17738 17.5 9.1665V14.1665C17.5002 14.7064 17.3257 15.2319 17.0024 15.6644C16.6792 16.0969 16.2246 16.413 15.7067 16.5657C15.1417 18.1498 12.7583 19.1665 10 19.1665C9.77899 19.1665 9.56702 19.0787 9.41074 18.9224C9.25446 18.7661 9.16667 18.5542 9.16667 18.3332C9.16667 18.1122 9.25446 17.9002 9.41074 17.7439C9.56702 17.5876 9.77899 17.4998 10 17.4998C11.5742 17.4998 12.9017 17.0982 13.6117 16.604C13.0592 16.4782 12.5659 16.1685 12.2125 15.7257C11.8592 15.2828 11.6667 14.7331 11.6667 14.1665L11.6675 11.624L11.6708 11.5815C11.6918 10.9337 11.964 10.3194 12.4298 9.86871C12.8956 9.41799 13.5185 9.16616 14.1667 9.1665H15C15.2925 9.1665 15.5733 9.2165 15.8333 9.309V9.1665C15.8341 7.63624 15.2335 6.16696 14.161 5.0754C13.0885 3.98384 11.6301 3.35742 10.1 3.33118C8.56997 3.30495 7.09089 3.88099 5.98162 4.93514C4.87234 5.98929 4.22172 7.43711 4.17 8.9665L4.16667 9.30817C4.4275 9.2165 4.70833 9.1665 5 9.1665H5.83333C6.49637 9.1665 7.13226 9.4299 7.6011 9.89874C8.06994 10.3676 8.33333 11.0035 8.33333 11.6665V14.1665C8.33333 14.8295 8.06994 15.4654 7.6011 15.9343C7.13226 16.4031 6.49637 16.6665 5.83333 16.6665H5C4.33696 16.6665 3.70107 16.4031 3.23223 15.9343C2.76339 15.4654 2.5 14.8295 2.5 14.1665V9.1665C2.5 7.17738 3.29018 5.26973 4.6967 3.8632C6.10322 2.45668 8.01088 1.6665 10 1.6665Z"
+                                fill="white" />
+                        </svg>
+                        18105000323
+                    </h3>
+                </div>
+                <div class="flex flex-col">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl">Follow us on</h2>
+                    <div class="flex flex-row gap-1 items-center pt-2">
+                        <svg class="h-5 md:h-auto" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M27.2 2.66675H3.46667C3.07768 2.66675 2.70463 2.82127 2.42958 3.09632C2.15452 3.37138 2 3.74443 2 4.13341V27.8667C2 28.2557 2.15452 28.6288 2.42958 28.9038C2.70463 29.1789 3.07768 29.3334 3.46667 29.3334H16.24V19.0001H12.7733V15.0001H16.24V12.0001C16.1682 11.2958 16.2513 10.5842 16.4836 9.91546C16.7159 9.24668 17.0917 8.63681 17.5846 8.12863C18.0776 7.62045 18.6757 7.22627 19.3371 6.97373C19.9985 6.72119 20.7071 6.61642 21.4133 6.66675C22.4511 6.65958 23.4884 6.71301 24.52 6.82675V10.4267H22.4C20.72 10.4267 20.4 11.2267 20.4 12.3867V14.9601H24.4L23.88 18.9601H20.4V29.3334H27.2C27.3926 29.3334 27.5833 29.2955 27.7613 29.2218C27.9392 29.1481 28.1009 29.04 28.2371 28.9038C28.3733 28.7676 28.4813 28.606 28.555 28.428C28.6287 28.2501 28.6667 28.0594 28.6667 27.8667V4.13341C28.6667 3.94081 28.6287 3.75009 28.555 3.57215C28.4813 3.3942 28.3733 3.23252 28.2371 3.09632C28.1009 2.96013 27.9392 2.8521 27.7613 2.77839C27.5833 2.70468 27.3926 2.66675 27.2 2.66675Z"
+                                fill="#FCFDFD" />
+                        </svg>
+
+                        <svg width="32" height="32" class="h-6 md:h-auto" viewBox="0 0 32 32" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.1017 3.15601C17.3486 3.15601 18.6276 3.18809 19.8671 3.24059L21.3313 3.31059L22.7327 3.39371L24.0452 3.48267L25.244 3.576C26.545 3.67501 27.7695 4.22996 28.7016 5.14312C29.6337 6.05627 30.2136 7.26904 30.3393 8.56783L30.3977 9.18762L30.507 10.5147C30.6091 11.8899 30.6849 13.389 30.6849 14.8226C30.6849 16.2561 30.6091 17.7552 30.507 19.1304L30.3977 20.4575L30.3393 21.0773C30.2136 22.3763 29.6334 23.5893 28.701 24.5025C27.7686 25.4156 26.5438 25.9705 25.2425 26.0691L24.0467 26.161L22.7342 26.2514L21.3313 26.3345L19.8671 26.4045C18.6127 26.4589 17.3573 26.4871 16.1017 26.4891C14.8462 26.4871 13.5908 26.4589 12.3364 26.4045L10.8722 26.3345L9.47077 26.2514L8.15828 26.161L6.95954 26.0691C5.65845 25.9701 4.43402 25.4152 3.50193 24.502C2.56983 23.5889 1.98986 22.3761 1.86417 21.0773L1.80584 20.4575L1.69646 19.1304C1.58539 17.6971 1.52604 16.2602 1.51855 14.8226C1.51855 13.389 1.59438 11.8899 1.69646 10.5147L1.80584 9.18762L1.86417 8.56783C1.98981 7.26927 2.56958 6.05668 3.50137 5.14356C4.43317 4.23044 5.65725 3.67534 6.95808 3.576L8.15536 3.48267L9.46785 3.39371L10.8708 3.31059L12.3349 3.24059C13.5898 3.18623 14.8457 3.15803 16.1017 3.15601ZM13.1851 11.2861V18.359C13.1851 19.0327 13.9143 19.4527 14.4976 19.1173L20.6225 15.5809C20.7558 15.5042 20.8665 15.3937 20.9435 15.2605C21.0205 15.1274 21.061 14.9763 21.061 14.8226C21.061 14.6688 21.0205 14.5177 20.9435 14.3846C20.8665 14.2515 20.7558 14.141 20.6225 14.0642L14.4976 10.5293C14.3645 10.4525 14.2136 10.412 14.06 10.412C13.9063 10.4121 13.7554 10.4525 13.6224 10.5294C13.4893 10.6063 13.3789 10.7168 13.3021 10.8499C13.2254 10.983 13.185 11.134 13.1851 11.2876V11.2861Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <hr class="border border-[#F6F8F9]">
+            <h2 class="flex text-[#FCFDFD] text-md md:text-xl justify-center py-2 -mb-4">Copyright &copy;2026
+                AllScreenSolutions</h2>
+        </div>
+    </footer>
+
+</body>
+
+</html>
