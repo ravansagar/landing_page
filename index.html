@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mero Billing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="bg-[#25671E] text-slate-900 antialiased" x-data="{ mobileMenuOpen: false }">
+
+    <nav class="top-0 w-full z-50">
+        <div class="max-w-7xl mx-auto px-6 md:px-[60px] flex justify-between items-center h-20">
+            <div class="flex items-center gap-2">
+                <div class="">
+                    <img src="./images/logo.svg" alt="" class="brightness-0 invert">
+                </div>
+                <span class="font-bold font-['Inter'] text-xl text-white pt-2 tracking-tight">Mero Billing</span>
+            </div>
+
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">Home</a>
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">About
+                    Us</a>
+                <a href="#"
+                    class="font-['Inter'] font-medium text-base text-white leading-6 tracking-normal text-slate-900">Contact
+                    Us</a>
+            </div>
+
+            <div class="hidden md:flex space-x-2 font-medium">
+                <a href="#"
+                    class="bg-white px-4 py-2 mx-2 rounded-md font-['Inter'] font-medium text-[#25671E] leading-6 tracking-normal">Sign
+                    in</a>
+                <a href="#"
+                    class="bg-none px-4 py-2 border rounded-md font-['Inter'] font-medium text-base text-white leading-6 tracking-normal">Sign
+                    up</a>
+            </div>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-white">
+                <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+                <svg x-show="mobileMenuOpen" x-cloak class="w-6 h-6" fill="none" stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-[#25671E] px-6 py-8 space-y-4 shadow-md">
+            <a href="#" class="block text-lg text-white font-medium">Home</a>
+            <a href="#" class="block text-lg text-white font-medium">About Us</a>
+            <a href="#" class="block text-lg text-white font-medium">Contact Us</a>
+            <button class="w-full font-['Inter'] bg-white text-[#25671E] py-3 rounded-lg font-bold">Sign in</button>
+            <button class="w-full text-white bg-[#25671E] py-3 rounded-lg border border font-bold">Sign up</button>
+        </div>
+    </nav>
+
+    <section class="w-full relative">
+        <div class="max-w-7xl mx-auto mt-12 md:mt-28 px-6 md:px-[60px]">
+            <div class="flex flex-col gap-6 md:gap-4 justify-center items-center">
+                <h2 class="font-semibold text-3xl md:text-5xl text-white leading-tight md:leading-[56px] md:text-center">
+                    All-in-One Billing That Keeps Your Finances in Control
+                </h2>
+                <p
+                    class="font-['Inter'] font-medium text-md md:text-2xl text-white leading-tight md:leading-[36px] md:text-center">
+                    Create invoices, monitor transactions, and simplify accounting without the complexity.
+                </p>
+                <div class="w-full md:w-auto mt-4 grid grid-cols-1 md:grid-cols-2 gap-2 md:mr-12">
+                    <button
+                        class="w-full md:w-[180px] h-[52px] bg-white text-[#25671E] rounded-lg font-semibold px-6 py-3 mr-2">
+                        Get Started
+                    </button>
+                    <button
+                        class="w-full md:w-[180px] h-[52px] text-white border border-white rounded-lg font-semibold px-6 py-3 mr-4">
+                        Sign in
+                    </button>
+                </div>
+            </div>
+            <div class="relative flex flex-row justify-center items-end pt-6 md:pt-14  overflow-hidden px-4">
+
+                <div class="relative -mr-32 sm:-mr-28 md:-mr-60 scale-75 origin-bottom">
+                    <img src="./images/dashboard.svg" class="w-75 sm:w-72 md:w-[650px] rounded-sm">
+                </div>
+
+                <div class="z-10">
+                    <img src="./images/dashboard.svg" class="w-100 sm:w-72 md:w-[650px] rounded-sm">
+                </div>
+
+                <div class="relative -ml-32 sm:-ml-28 md:-ml-60 scale-75 origin-bottom">
+                    <img src="./images/dashboard.svg" class="w-75 sm:w-72 md:w-[650px] rounded-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="w-full relative bg-white">
+        <div class="max-w-7xl mx-auto py-8 md:py-16 px-6 md:px-[60px]">
+            <div class="mx-auto" x-data="{
+                services: [
+                    {title: 'Easy to Use', description: 'Beginner friendly interface', img: 'images/services/hand.svg'},
+                    {title: 'Real-Time Updates', description: 'Stay on top of your business instantly', img: 'images/services/clock.svg'},
+                    {title: 'All in One System', description: 'Billing, Accounting and Reporting together', img: 'images/services/folder.svg'},
+                ]
+            }">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                    Our Services
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <template x-for="(item, index) in services" :key="index">
+                        <div class="bg-[#E9F0E9] p-6 rounded-2xl shadow-sm">
+                            <div class="w-12 h-12 flex items-center justify-center mb-2"><img :src="item.img" /></div>
+                            <h3 class="text-xl font-bold text-[#213D58] mb-2" x-text="item.title"></h3>
+                            <p class="text-[#213D58] leading-relaxed" x-text="item.description"></p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="mx-auto py-6 md:py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden bg-white">
+                    <div class="flex flex-col justify-center py-4">
+                        <h1 class="text-[##213D58] font-bold text-2xl md:text-4xl leading-tight mb-4">
+                            Simplify Your Billing Process
+                        </h1>
+                        <p class="text-[#213D58] text-lg md:text-xl text-start leading-relaxed">
+                            Mero Billing simplifies billing and accounting with an intuitive dashboard, easy invoicing,
+                            and
+                            real-time insights to help your business grow.
+                        </p>
+                    </div>
+
+                    <div class="w-full md:h-auto">
+                        <img src="./images/dashboard.svg" alt="Dashboard Preview"
+                            class="w-full h-full object-cover object-left md:object-center">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mx-auto" x-data="{ 
+                    pricing: [
+                        { title: 'Trading & Godown', description: 'Sales & stocks in one place', price: '13,000', img: './images/tradingAndGodown.svg' },
+                        { title: 'Manufacture', description: 'Easy production tracking', price: '6,000', img: './images/manufacture.svg' },
+                        { title: 'VAT Features', description: 'Automatic VAT & Reports', price: '13,000', img: './images/vatFeatures.svg' },
+                        { title: 'POS', description: 'Includes 2 POS terminals', price: '13,000', img: './images/POS.svg' },
+                        { title: 'Branch', description: 'Supports upto 3 branches', price: '25,000', img: './images/branch.svg' },
+                    ] 
+                }">
+                <h1 class="text-2xl md:text-3xl font-semibold text-[#25671E] tracking-tight">
+                    Pricing
+                </h1>
+                <h2 class="text-lg md:text-xl text-[#4E4E4E] mb-2 tracking-tight">
+                    Choose the modules you need
+                </h2>
+                <h2 class="bg-[#BBD0B9] w-fit px-4 py-2 rounded-md text-[#25671E] text-sm md:text-md">
+                    All prices including VAT
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-5 pt-6 gap-2 md:overflow-hidden bg-white">
+                    <template x-for="(item, index) in pricing" :key="index">
+                        <div class="bg-[#FCFDFD] p-3 rounded-md border-2 border-[#E4E4E4] shadow-sm">
+                            <div class="w-12 h-12 flex items-center justify-center mb-2">
+                                <img :src="item.img" />
+                            </div>
+                            <h3 class="text-xl font-bold text-[#4E4E4E] text-md md:text-lg" x-text="item.title"></h3>
+                            <p class="text-[#4E4E4E] leading-relaxed text-sm md:text-md" x-text="item.description"></p>
+                            <h3 class="text-[#25671E] font-semibold text-lg md:text-xl" x-text="item.price"></h3>
+                            <div class="mx-auto justify-center pt-3">
+                                <button
+                                    class="text-[#25671E] hover:bg-[#25671E] hover:text-white font-md md:text-xl w-full py-2 rounded-md border-2 border-[#25671E]">Try
+                                    Now</button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="mx-auto pt-8" x-data="{
+                addOns:[
+                    { title:'Limited User', description: '(Company Rights)', discount:'10%', img:'images/addOns/users.svg'},
+                    { title:'Each Company', description: '', discount:'50%', img:'images/addOns/company.svg'},
+                    { title:'Each Branch', description: '(Includes 3 branches)', discount:'25%', img:'images/branch.svg'},
+                ]
+            }">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                    Additional Add-Ons
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <template x-for="(item, index) in addOns" :key="index">
+                        <div class="flex border-2 border-[#E4E4E4] rounded-md shadow-sm px-3 py-4">
+                            <div class="w-14 flex-none flex items-center"><img :src="item.img" /></div>
+                            <div class="w-48 flex-auto">
+                                <h2 class="text-[#4E4E4E] font-semibold text-md md:text-lg" x-text="item.title"></h2>
+                                <h3 class="text-[#4E4E4E] font-medium text-sm md:text-md" x-text="item.description"></h3>
+                            </div>
+                            <div class="w-32 flex-auto flex flex-col items-end justify-center">
+                                <h2 class="text-[#25671E] font-semibold text-md md:text-lg" x-text="item.discount"></h2>
+                                <h3 class="text-[#25671E] font-medium text-sm md:text-md flex justify-end">of base price</h3>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="mx-auto pt-8" x-data="{
+                testimonials:[
+                    { name:'User 1', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
+                    { name:'User 2', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
+                    { name:'User 3', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'}
+                ]
+            }">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                    Testimonials
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2">
+                    <template x-for="(user, index) in testimonials" :key="index">
+                        <div class="border-2 border-[#E4E4E4] rounded-md shadow-sm p-6">
+                            <div class="flex justify-between items-center mb-1">
+                                <h1 class="text-[#25671E] font-medium text-lg md:text-xl" x-text="user.name"></h1>
+                                <h2 class="text-[#4E4E4E] font-medium text-md md:text-lg" x-text="user.role"></h2>
+                            </div>
+                            <hr class="border-1 text-[#C8C8C8] border-[#C8C8C8]">
+                            <div class="w-full py-2">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M21.4471 0.000831604C21.4471 0.463333 21.4835 0.850832 21.4305 1.225C21.4082 1.38417 21.2236 1.555 21.0721 1.65083C20.3379 2.12 19.5407 2.495 18.8561 3.03333C16.641 4.77667 15.3282 7.07167 15.2561 10.0533C15.2363 10.8992 15.5459 11.1117 16.2511 10.7808C18.2899 9.82917 20.4827 10.3875 21.6524 12.1558C22.928 14.0858 22.7483 16.6558 21.2194 18.3408C19.2675 20.4925 16.0541 20.5575 13.8382 18.5008C12.5112 17.2692 11.8805 15.6792 11.7232 13.87C11.1959 7.81084 14.2148 2.81583 19.7104 0.621666C20.2542 0.405001 20.8113 0.226665 21.4471 0.000831604Z"
+                                        fill="#C8C8C8" />
+                                    <path
+                                        d="M9.78313 0.000831604C9.78313 0.463333 9.81955 0.850832 9.76657 1.225C9.74422 1.38417 9.55963 1.555 9.40815 1.65083C8.67391 2.12 7.87676 2.495 7.19219 3.03333C4.97707 4.77667 3.66421 7.07167 3.5922 10.0533C3.57233 10.8992 3.88192 11.1117 4.58718 10.7808C6.62599 9.82917 8.81877 10.3875 9.98842 12.1558C11.264 14.0858 11.0844 16.6558 9.55549 18.3408C7.6036 20.4925 4.39017 20.5575 2.17422 18.5008C0.847294 17.2692 0.216528 15.6792 0.0592508 13.87C-0.468042 7.81084 2.55086 2.81583 8.04646 0.621666C8.59031 0.405001 9.1474 0.226665 9.78313 0.000831604Z"
+                                        fill="#C8C8C8" />
+                                </svg>
+                            </div>
+                            <h2 class="text-[#213D58] text-lg md:text-xl font-medium justify px-4"
+                                x-text="user.description"></h2>
+                            <div class="flex items-center justify-end w-full py-2">
+                                <svg width="23" height="20" viewBox="0 0 23 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M1.05304 19.9993C1.05304 19.5368 1.01662 19.1493 1.0696 18.7751C1.09195 18.6159 1.27654 18.4451 1.42802 18.3493C2.16226 17.8801 2.95941 17.5051 3.64398 16.9668C5.85911 15.2234 7.17196 12.9284 7.24398 9.94676C7.26384 9.10093 6.95426 8.88843 6.24899 9.21926C4.21018 10.1709 2.0174 9.61259 0.847752 7.84426C-0.427851 5.91426 -0.248224 3.34426 1.28068 1.65925C3.23257 -0.492414 6.446 -0.557414 8.66196 1.49925C9.98888 2.73092 10.6196 4.32092 10.7769 6.13009C11.3042 12.1893 8.28532 17.1843 2.78971 19.3784C2.24587 19.5951 1.68877 19.7734 1.05304 19.9993Z"
+                                        fill="#C8C8C8" />
+                                    <path
+                                        d="M12.717 19.9993C12.717 19.5368 12.6806 19.1493 12.7335 18.7751C12.7559 18.6159 12.9405 18.4451 13.092 18.3493C13.8262 17.8801 14.6233 17.5051 15.3079 16.9668C17.523 15.2234 18.8359 12.9284 18.9079 9.94676C18.9278 9.10093 18.6182 8.88843 17.9129 9.21926C15.8741 10.1709 13.6813 9.61259 12.5117 7.84426C11.2361 5.91426 11.4157 3.34426 12.9446 1.65925C14.8965 -0.492414 18.1099 -0.557414 20.3259 1.49925C21.6528 2.73092 22.2836 4.32092 22.4409 6.13009C22.9682 12.1893 19.9493 17.1843 14.4537 19.3784C13.9098 19.5951 13.3527 19.7734 12.717 19.9993Z"
+                                        fill="#C8C8C8" />
+                                </svg>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="w-full relative -my-4 pt-8 bg-[#E9F0E9] pb-16">
+        <div class="max-w-7xl mx-auto max-w-7xl px-8 md:px-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-2 tracking-tight">
+                Let's Connect!
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center pb-2">
+                <h1 class="text-[#1E5218] font-medium text-md md:text-xl pb-3">Have a question about us or need a help
+                    with
+                    your
+                    work? We are here to help.</h1>
+                <div class="flex gap-4 md:justify-end">
+                    <a href="tel:+9779876576545" class="flex text-md md:text-xl">
+                        <svg width="28" height="28" class="h-5 pr-2 md:h-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M22.435 17.8034L19.4717 17.4651C19.1233 17.4241 18.7701 17.4627 18.4387 17.5779C18.1073 17.6931 17.8063 17.8818 17.5584 18.1301L15.4117 20.2767C12.1 18.592 9.40812 15.9001 7.72338 12.5884L9.88172 10.4301C10.3834 9.92839 10.6284 9.22839 10.5467 8.51672L10.2084 5.57672C10.1425 5.00749 9.86942 4.48242 9.44125 4.10158C9.01308 3.72075 8.45975 3.51079 7.88672 3.51172H5.86838C4.55005 3.51172 3.45338 4.60839 3.53505 5.92672C4.15338 15.8901 12.1217 23.8467 22.0734 24.4651C23.3917 24.5467 24.4884 23.4501 24.4884 22.1317V20.1134C24.5 18.9351 23.6134 17.9434 22.435 17.8034Z"
+                                fill="#25671E" />
+                        </svg>
+                        <span class="text-[#4E4E4E] text-md md:text-xl">9876576545</span></a>
+                    <a href="tel:18105000323" class="flex">
+                        <svg width="28" height="28" class="h-5 pr-1 md:h-auto" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14 2.33325C16.7848 2.33325 19.4555 3.4395 21.4246 5.40863C23.3938 7.37776 24.5 10.0485 24.5 12.8333V19.8333C24.5003 20.5892 24.2559 21.3248 23.8034 21.9303C23.3508 22.5358 22.7144 22.9784 21.9893 23.1921C21.1983 25.4099 17.8617 26.8333 14 26.8333C13.6906 26.8333 13.3938 26.7103 13.175 26.4915C12.9562 26.2728 12.8333 25.976 12.8333 25.6666C12.8333 25.3572 12.9562 25.0604 13.175 24.8416C13.3938 24.6228 13.6906 24.4999 14 24.4999C16.2038 24.4999 18.0623 23.9376 19.0563 23.2458C18.2829 23.0697 17.5923 22.6361 17.0976 22.0161C16.6028 21.3961 16.3334 20.6264 16.3333 19.8333L16.3345 16.2738L16.3392 16.2143C16.3686 15.3073 16.7496 14.4473 17.4017 13.8163C18.0539 13.1853 18.9259 12.8328 19.8333 12.8333H21C21.4095 12.8333 21.8027 12.9033 22.1667 13.0328V12.8333C22.1677 10.6909 21.3269 8.63389 19.8254 7.1057C18.3239 5.57752 16.2821 4.70053 14.14 4.6638C11.998 4.62707 9.92725 5.43353 8.37426 6.90934C6.82128 8.38515 5.91041 10.4121 5.838 12.5533L5.83333 13.0316C6.1985 12.9033 6.59167 12.8333 7 12.8333H8.16667C9.09492 12.8333 9.98516 13.202 10.6415 13.8584C11.2979 14.5148 11.6667 15.405 11.6667 16.3333V19.8333C11.6667 20.7615 11.2979 21.6517 10.6415 22.3081C9.98516 22.9645 9.09492 23.3333 8.16667 23.3333H7C6.07174 23.3333 5.1815 22.9645 4.52513 22.3081C3.86875 21.6517 3.5 20.7615 3.5 19.8333V12.8333C3.5 10.0485 4.60625 7.37776 6.57538 5.40863C8.54451 3.4395 11.2152 2.33325 14 2.33325Z"
+                                fill="#25671E" />
+                        </svg>
+                        <span class="text-[#4E4E4E] text-md md:text-xl">18105000323</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="w-full relative px-8 md:px-16 pb-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 py-8 md:px-8 gap-4 overflow-hidden">
+                <div class="flex flex-col gap-1">
+                    <div class="flex flex-row gap-2">
+                        <svg width="24" height="24" viewBox="0 0 35 33" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <rect width="34.4942" height="32.4961" fill="url(#pattern0_81_54)" />
+                            <defs>
+                                <pattern id="pattern0_81_54" patternContentUnits="objectBoundingBox" width="1"
+                                    height="1">
+                                    <use xlink:href="#image0_81_54" transform="scale(0.00304878 0.00323625)" />
+                                </pattern>
+                                <image id="image0_81_54" width="328" height="309" preserveAspectRatio="none"
+                                    xlink:href="data:image/png;base64,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" />
+                            </defs>
+                        </svg>
+                        <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Mero Billing</h2>
+                    </div>
+                    <h2 class="text-[#FCFDFD] font-medwium text-xs md:text-xl pt-1">Simplifying Billing, Empowering
+                        Business.
+                    </h2>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Quick Links</h2>
+                    <a href="#" class="text-[#FCFDFD] font-medium text-sm md:text-xl">Services</a>
+                    <a href="#" class="text-[#FCFDFD] font-medium text-sm md:text-xl">Contact Us</a>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Legal</h2>
+                    <a href="#" class="text-[#FCFDFD] font-medium text-sm md:text-xl">Privacy Policy</a>
+                    <a href="#" class="text-[#FCFDFD] font-medium text-sm md:text-xl">Terms and conditions</a>
+                </div>
+
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Contact Info</h2>
+                    <h3 class="flex gap-2 text-[#FCFDFD] font-medium text-sm md:text-xl">
+                        <svg width="15" height="20" class="h-4 md:h-auto" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.5 0C5.51088 0 3.60322 0.737498 2.1967 2.05025C0.790176 3.36301 0 5.14348 0 7C0 12.25 7.5 20 7.5 20C7.5 20 15 12.25 15 7C15 5.14348 14.2098 3.36301 12.8033 2.05025C11.3968 0.737498 9.48912 0 7.5 0ZM7.5 9.5C6.97023 9.5 6.45235 9.35338 6.01187 9.07867C5.57138 8.80397 5.22806 8.41352 5.02532 7.95671C4.82259 7.49989 4.76954 6.99723 4.8729 6.51227C4.97625 6.02732 5.23136 5.58186 5.60596 5.23223C5.98057 4.8826 6.45784 4.6445 6.97744 4.54804C7.49703 4.45157 8.0356 4.50108 8.52505 4.6903C9.01449 4.87952 9.43283 5.19995 9.72715 5.61107C10.0215 6.0222 10.1786 6.50555 10.1786 7C10.1786 7.3283 10.1093 7.65339 9.97468 7.95671C9.84007 8.26002 9.64276 8.53562 9.39404 8.76777C9.14531 8.99991 8.85002 9.18406 8.52505 9.3097C8.20007 9.43534 7.85175 9.5 7.5 9.5Z"
+                                fill="#FCFDFD" />
+                        </svg>
+                        Tikathali, Lalitpur
+                    </h3>
+                    <h3 class="flex gap-2 text-[#FCFDFD] font-medium text-sm md:text-xl"><svg width="20" height="20"
+                           class="h-5 md:h-auto" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16.025 12.7166L13.9083 12.475C13.6594 12.4457 13.4071 12.4733 13.1704 12.5556C12.9337 12.6378 12.7187 12.7727 12.5416 12.95L11.0083 14.4833C8.6428 13.2799 6.72002 11.3571 5.51664 8.99164L7.05831 7.44997C7.41664 7.09164 7.59164 6.59164 7.53331 6.0833L7.29164 3.9833C7.24457 3.57671 7.04953 3.20166 6.74369 2.92963C6.43786 2.65761 6.04261 2.50763 5.63331 2.5083H4.19164C3.24997 2.5083 2.46664 3.29164 2.52497 4.2333C2.96664 11.35 8.65831 17.0333 15.7666 17.475C16.7083 17.5333 17.4916 16.75 17.4916 15.8083V14.3666C17.5 13.525 16.8666 12.8166 16.025 12.7166Z"
+                                fill="#FCFDFD" />
+                        </svg> 098765434567
+                    </h3>
+                    </h3>
+                    <h3 class="flex gap-2 text-[#FCFDFD] font-medium text-sm md:text-xl">
+                        <svg width="20" height="20" class="h-5 md:h-auto" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 1.6665C11.9891 1.6665 13.8968 2.45668 15.3033 3.8632C16.7098 5.26973 17.5 7.17738 17.5 9.1665V14.1665C17.5002 14.7064 17.3257 15.2319 17.0024 15.6644C16.6792 16.0969 16.2246 16.413 15.7067 16.5657C15.1417 18.1498 12.7583 19.1665 10 19.1665C9.77899 19.1665 9.56702 19.0787 9.41074 18.9224C9.25446 18.7661 9.16667 18.5542 9.16667 18.3332C9.16667 18.1122 9.25446 17.9002 9.41074 17.7439C9.56702 17.5876 9.77899 17.4998 10 17.4998C11.5742 17.4998 12.9017 17.0982 13.6117 16.604C13.0592 16.4782 12.5659 16.1685 12.2125 15.7257C11.8592 15.2828 11.6667 14.7331 11.6667 14.1665L11.6675 11.624L11.6708 11.5815C11.6918 10.9337 11.964 10.3194 12.4298 9.86871C12.8956 9.41799 13.5185 9.16616 14.1667 9.1665H15C15.2925 9.1665 15.5733 9.2165 15.8333 9.309V9.1665C15.8341 7.63624 15.2335 6.16696 14.161 5.0754C13.0885 3.98384 11.6301 3.35742 10.1 3.33118C8.56997 3.30495 7.09089 3.88099 5.98162 4.93514C4.87234 5.98929 4.22172 7.43711 4.17 8.9665L4.16667 9.30817C4.4275 9.2165 4.70833 9.1665 5 9.1665H5.83333C6.49637 9.1665 7.13226 9.4299 7.6011 9.89874C8.06994 10.3676 8.33333 11.0035 8.33333 11.6665V14.1665C8.33333 14.8295 8.06994 15.4654 7.6011 15.9343C7.13226 16.4031 6.49637 16.6665 5.83333 16.6665H5C4.33696 16.6665 3.70107 16.4031 3.23223 15.9343C2.76339 15.4654 2.5 14.8295 2.5 14.1665V9.1665C2.5 7.17738 3.29018 5.26973 4.6967 3.8632C6.10322 2.45668 8.01088 1.6665 10 1.6665Z"
+                                fill="white" />
+                        </svg>
+                        18105000323
+                    </h3>
+                </div>
+                <div class="flex flex-col">
+                    <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Follow us on</h2>
+                    <div class="flex flex-row gap-1 items-center pt-2">
+                        <svg class="h-6 md:h-auto" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M27.2 2.66675H3.46667C3.07768 2.66675 2.70463 2.82127 2.42958 3.09632C2.15452 3.37138 2 3.74443 2 4.13341V27.8667C2 28.2557 2.15452 28.6288 2.42958 28.9038C2.70463 29.1789 3.07768 29.3334 3.46667 29.3334H16.24V19.0001H12.7733V15.0001H16.24V12.0001C16.1682 11.2958 16.2513 10.5842 16.4836 9.91546C16.7159 9.24668 17.0917 8.63681 17.5846 8.12863C18.0776 7.62045 18.6757 7.22627 19.3371 6.97373C19.9985 6.72119 20.7071 6.61642 21.4133 6.66675C22.4511 6.65958 23.4884 6.71301 24.52 6.82675V10.4267H22.4C20.72 10.4267 20.4 11.2267 20.4 12.3867V14.9601H24.4L23.88 18.9601H20.4V29.3334H27.2C27.3926 29.3334 27.5833 29.2955 27.7613 29.2218C27.9392 29.1481 28.1009 29.04 28.2371 28.9038C28.3733 28.7676 28.4813 28.606 28.555 28.428C28.6287 28.2501 28.6667 28.0594 28.6667 27.8667V4.13341C28.6667 3.94081 28.6287 3.75009 28.555 3.57215C28.4813 3.3942 28.3733 3.23252 28.2371 3.09632C28.1009 2.96013 27.9392 2.8521 27.7613 2.77839C27.5833 2.70468 27.3926 2.66675 27.2 2.66675Z"
+                                fill="#FCFDFD" />
+                        </svg>
+
+                        <svg width="32" height="32" class="h-6 md:h-auto" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16.1017 3.15601C17.3486 3.15601 18.6276 3.18809 19.8671 3.24059L21.3313 3.31059L22.7327 3.39371L24.0452 3.48267L25.244 3.576C26.545 3.67501 27.7695 4.22996 28.7016 5.14312C29.6337 6.05627 30.2136 7.26904 30.3393 8.56783L30.3977 9.18762L30.507 10.5147C30.6091 11.8899 30.6849 13.389 30.6849 14.8226C30.6849 16.2561 30.6091 17.7552 30.507 19.1304L30.3977 20.4575L30.3393 21.0773C30.2136 22.3763 29.6334 23.5893 28.701 24.5025C27.7686 25.4156 26.5438 25.9705 25.2425 26.0691L24.0467 26.161L22.7342 26.2514L21.3313 26.3345L19.8671 26.4045C18.6127 26.4589 17.3573 26.4871 16.1017 26.4891C14.8462 26.4871 13.5908 26.4589 12.3364 26.4045L10.8722 26.3345L9.47077 26.2514L8.15828 26.161L6.95954 26.0691C5.65845 25.9701 4.43402 25.4152 3.50193 24.502C2.56983 23.5889 1.98986 22.3761 1.86417 21.0773L1.80584 20.4575L1.69646 19.1304C1.58539 17.6971 1.52604 16.2602 1.51855 14.8226C1.51855 13.389 1.59438 11.8899 1.69646 10.5147L1.80584 9.18762L1.86417 8.56783C1.98981 7.26927 2.56958 6.05668 3.50137 5.14356C4.43317 4.23044 5.65725 3.67534 6.95808 3.576L8.15536 3.48267L9.46785 3.39371L10.8708 3.31059L12.3349 3.24059C13.5898 3.18623 14.8457 3.15803 16.1017 3.15601ZM13.1851 11.2861V18.359C13.1851 19.0327 13.9143 19.4527 14.4976 19.1173L20.6225 15.5809C20.7558 15.5042 20.8665 15.3937 20.9435 15.2605C21.0205 15.1274 21.061 14.9763 21.061 14.8226C21.061 14.6688 21.0205 14.5177 20.9435 14.3846C20.8665 14.2515 20.7558 14.141 20.6225 14.0642L14.4976 10.5293C14.3645 10.4525 14.2136 10.412 14.06 10.412C13.9063 10.4121 13.7554 10.4525 13.6224 10.5294C13.4893 10.6063 13.3789 10.7168 13.3021 10.8499C13.2254 10.983 13.185 11.134 13.1851 11.2876V11.2861Z"
+                                fill="white" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <hr class="border border-[#F6F8F9]">
+            <h2 class="flex text-[#FCFDFD] text-md md:text-2xl justify-center py-2 -mb-4">Copyright &copy;2026
+                AllScreenSolutions</h2>
+        </div>
+    </footer>
+</body>
+
+</html>
