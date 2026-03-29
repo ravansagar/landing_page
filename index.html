@@ -23,7 +23,7 @@
 <body class="bg-[#25671E] text-slate-900 antialiased" x-data="{ mobileMenuOpen: false }">
 
     <nav class="top-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 md:px-[60px] flex justify-between items-center h-20">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto px-6 md:px-[60px] flex justify-between items-center h-20">
             <div class="flex items-center gap-2">
                 <div class="">
                     <img src="./images/logo.svg" alt="" class="brightness-0 invert">
@@ -72,9 +72,10 @@
     </nav>
 
     <section class="w-full relative">
-        <div class="max-w-7xl mx-auto mt-12 md:mt-28 px-6 md:px-[60px]">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto mt-12 md:mt-20 px-6 md:px-[60px]">
             <div class="flex flex-col gap-6 md:gap-4 justify-center items-center">
-                <h2 class="font-semibold text-3xl md:text-5xl text-white leading-tight md:leading-[56px] md:text-center">
+                <h2
+                    class="font-semibold text-3xl md:text-5xl text-white leading-tight md:leading-[56px] md:text-center">
                     All-in-One Billing That Keeps Your Finances in Control
                 </h2>
                 <p
@@ -92,7 +93,7 @@
                     </button>
                 </div>
             </div>
-            <div class="relative flex flex-row justify-center items-end pt-6 md:pt-14  overflow-hidden px-4">
+            <div class="relative flex flex-row justify-center items-end pt-6 md:pt-16  overflow-hidden px-4">
 
                 <div class="relative -mr-32 sm:-mr-28 md:-mr-60 scale-75 origin-bottom">
                     <img src="./images/dashboard.svg" class="w-75 sm:w-72 md:w-[650px] rounded-sm">
@@ -110,15 +111,15 @@
     </section>
 
     <section class="w-full relative bg-white">
-        <div class="max-w-7xl mx-auto py-8 md:py-16 px-6 md:px-[60px]">
-            <div class="mx-auto" x-data="{
+        <div class="max-w-7xl lg:max-w-8xl mx-auto px-6 md:px-[60px]">
+            <div class="mx-auto py-8 md:pb-12" x-data="{
                 services: [
                     {title: 'Easy to Use', description: 'Beginner friendly interface', img: 'images/services/hand.svg'},
                     {title: 'Real-Time Updates', description: 'Stay on top of your business instantly', img: 'images/services/clock.svg'},
                     {title: 'All in One System', description: 'Billing, Accounting and Reporting together', img: 'images/services/folder.svg'},
                 ]
             }">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] pb-6 tracking-tight">
                     Our Services
                 </h2>
 
@@ -133,16 +134,16 @@
                 </div>
             </div>
 
-            <div class="mx-auto py-6 md:py-12">
+            <div class="mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden bg-white">
-                    <div class="flex flex-col justify-center py-4">
-                        <h1 class="text-[##213D58] font-bold text-2xl md:text-4xl leading-tight mb-4">
+                    <div class="flex flex-col md:max-w-[60%] justify-start">
+                        <h1
+                            class="text-[#213D58] font-semibold text-2xl md:text-3xl leading-8 md:leading-10">
                             Simplify Your Billing Process
                         </h1>
-                        <p class="text-[#213D58] text-lg md:text-xl text-start leading-relaxed">
+                        <p class="text-[#213D58] text-lg font-medium md:text-xl leading-7 md:leading-8 py-6 md:py-auto">
                             Mero Billing simplifies billing and accounting with an intuitive dashboard, easy invoicing,
-                            and
-                            real-time insights to help your business grow.
+                            and real-time insights to help your business grow.
                         </p>
                     </div>
 
@@ -153,7 +154,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto" x-data="{ 
+            <div class="mx-auto py-8 md:py-12" x-data="{ 
                     pricing: [
                         { title: 'Trading & Godown', description: 'Sales & stocks in one place', price: '13,000', img: './images/tradingAndGodown.svg' },
                         { title: 'Manufacture', description: 'Easy production tracking', price: '6,000', img: './images/manufacture.svg' },
@@ -179,25 +180,25 @@
                             </div>
                             <h3 class="text-xl font-bold text-[#4E4E4E] text-md md:text-lg" x-text="item.title"></h3>
                             <p class="text-[#4E4E4E] leading-relaxed text-sm md:text-md" x-text="item.description"></p>
-                            <h3 class="text-[#25671E] font-semibold text-lg md:text-xl" x-text="item.price"></h3>
-                            <div class="mx-auto justify-center pt-3">
-                                <button
-                                    class="text-[#25671E] hover:bg-[#25671E] hover:text-white font-sm md:text-md w-full py-2 rounded-md border-2 border-[#25671E]">Try
-                                    Now</button>
+                            <div class="mx-auto justify-center w-full pt-3 flex flex-col gap-2">
+                                <h3 class="text-[#25671E] font-semibold text-lg md:text-xl" x-text="item.price"></h3>
+                                    <button
+                                        class="text-[#25671E] hover:bg-[#25671E] hover:text-white font-sm md:text-md w-full py-2 rounded-md border-2 border-[#25671E]">Try
+                                        Now</button>
                             </div>
                         </div>
                     </template>
                 </div>
             </div>
 
-            <div class="mx-auto pt-8" x-data="{
+            <div class="mx-auto" x-data="{
                 addOns:[
                     { title:'Limited User', description: '(Company Rights)', discount:'10%', img:'images/addOns/users.svg'},
                     { title:'Each Company', description: '', discount:'50%', img:'images/addOns/company.svg'},
                     { title:'Each Branch', description: '(Includes 3 branches)', discount:'25%', img:'images/branch.svg'},
                 ]
             }">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] pb-6 tracking-tight">
                     Additional Add-Ons
                 </h2>
 
@@ -212,21 +213,22 @@
                             </div>
                             <div class="w-32 flex-auto flex flex-col items-end justify-center">
                                 <h2 class="text-[#25671E] font-semibold text-md md:text-lg" x-text="item.discount"></h2>
-                                <h3 class="text-[#25671E] font-medium text-sm md:text-md flex justify-end">of base price</h3>
+                                <h3 class="text-[#25671E] font-medium text-sm md:text-md flex justify-end">of base price
+                                </h3>
                             </div>
                         </div>
                     </template>
                 </div>
             </div>
 
-            <div class="mx-auto pt-8" x-data="{
+            <div class="mx-auto py-8 md:py-12 md:pb-24" x-data="{
                 testimonials:[
                     { name:'User 1', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
                     { name:'User 2', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
                     { name:'User 3', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'}
                 ]
             }">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-8 tracking-tight">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-6 tracking-tight">
                     Testimonials
                 </h2>
 
@@ -269,8 +271,8 @@
         </div>
     </section>
 
-    <div class="w-full relative -my-4 pt-8 bg-[#dee8dd] pb-8">
-        <div class="max-w-7xl mx-auto max-w-7xl px-8 md:px-16">
+    <div class="w-full relative -my-4 pt-8 md:pt-12 bg-[#dee8dd] pb-8">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto px-8 md:px-16">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-2 tracking-tight">
                 Let's Connect!
             </h2>
@@ -281,14 +283,16 @@
                     work? We are here to help.</h1>
                 <div class="flex gap-4 md:justify-end">
                     <a href="tel:+9779876576545" class="flex text-md md:text-xl">
-                        <svg width="28" height="28" class="h-5 pr-2 md:h-auto" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="28" height="28" class="h-5 pr-2 md:h-auto" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M22.435 17.8034L19.4717 17.4651C19.1233 17.4241 18.7701 17.4627 18.4387 17.5779C18.1073 17.6931 17.8063 17.8818 17.5584 18.1301L15.4117 20.2767C12.1 18.592 9.40812 15.9001 7.72338 12.5884L9.88172 10.4301C10.3834 9.92839 10.6284 9.22839 10.5467 8.51672L10.2084 5.57672C10.1425 5.00749 9.86942 4.48242 9.44125 4.10158C9.01308 3.72075 8.45975 3.51079 7.88672 3.51172H5.86838C4.55005 3.51172 3.45338 4.60839 3.53505 5.92672C4.15338 15.8901 12.1217 23.8467 22.0734 24.4651C23.3917 24.5467 24.4884 23.4501 24.4884 22.1317V20.1134C24.5 18.9351 23.6134 17.9434 22.435 17.8034Z"
                                 fill="#25671E" />
                         </svg>
                         <span class="text-[#4E4E4E] text-md md:text-xl">9876576545</span></a>
                     <a href="tel:18105000323" class="flex">
-                        <svg width="28" height="28" class="h-5 pr-1 md:h-auto" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="28" height="28" class="h-5 pr-1 md:h-auto" viewBox="0 0 28 28" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M14 2.33325C16.7848 2.33325 19.4555 3.4395 21.4246 5.40863C23.3938 7.37776 24.5 10.0485 24.5 12.8333V19.8333C24.5003 20.5892 24.2559 21.3248 23.8034 21.9303C23.3508 22.5358 22.7144 22.9784 21.9893 23.1921C21.1983 25.4099 17.8617 26.8333 14 26.8333C13.6906 26.8333 13.3938 26.7103 13.175 26.4915C12.9562 26.2728 12.8333 25.976 12.8333 25.6666C12.8333 25.3572 12.9562 25.0604 13.175 24.8416C13.3938 24.6228 13.6906 24.4999 14 24.4999C16.2038 24.4999 18.0623 23.9376 19.0563 23.2458C18.2829 23.0697 17.5923 22.6361 17.0976 22.0161C16.6028 21.3961 16.3334 20.6264 16.3333 19.8333L16.3345 16.2738L16.3392 16.2143C16.3686 15.3073 16.7496 14.4473 17.4017 13.8163C18.0539 13.1853 18.9259 12.8328 19.8333 12.8333H21C21.4095 12.8333 21.8027 12.9033 22.1667 13.0328V12.8333C22.1677 10.6909 21.3269 8.63389 19.8254 7.1057C18.3239 5.57752 16.2821 4.70053 14.14 4.6638C11.998 4.62707 9.92725 5.43353 8.37426 6.90934C6.82128 8.38515 5.91041 10.4121 5.838 12.5533L5.83333 13.0316C6.1985 12.9033 6.59167 12.8333 7 12.8333H8.16667C9.09492 12.8333 9.98516 13.202 10.6415 13.8584C11.2979 14.5148 11.6667 15.405 11.6667 16.3333V19.8333C11.6667 20.7615 11.2979 21.6517 10.6415 22.3081C9.98516 22.9645 9.09492 23.3333 8.16667 23.3333H7C6.07174 23.3333 5.1815 22.9645 4.52513 22.3081C3.86875 21.6517 3.5 20.7615 3.5 19.8333V12.8333C3.5 10.0485 4.60625 7.37776 6.57538 5.40863C8.54451 3.4395 11.2152 2.33325 14 2.33325Z"
                                 fill="#25671E" />
@@ -300,8 +304,8 @@
     </div>
     <div class="w-full py-6 md:py-12 bg-white"></div>
 
-    <footer class="w-full relative px-8 md:px-16 pb-8">
-        <div class="max-w-7xl mx-auto">
+    <footer class="w-full relative px-8 md:px-16 py-12">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto">
             <div class="grid grid-cols-2 md:grid-cols-5 py-8 md:px-8 gap-4 md:gap-0 overflow-hidden">
                 <div class="flex flex-col gap-1 col-span-2">
                     <div class="flex flex-row gap-2">
@@ -319,7 +323,8 @@
                         </svg>
                         <h2 class="text-[#FCFDFD] font-semibold text-md md:text-2xl">Mero Billing</h2>
                     </div>
-                    <h2 class="text-[#FCFDFD] max-w-[200px] font-medwium text-xs md:text-md pt-1">Simplifying Billing, Empowering
+                    <h2 class="text-[#FCFDFD] max-w-[200px] font-medwium text-xs md:text-md pt-1">Simplifying Billing,
+                        Empowering
                         Business.
                     </h2>
                 </div>
@@ -367,7 +372,7 @@
                 </div>
                 <div class="flex flex-col">
                     <h2 class="text-[#FCFDFD] font-semibold text-md md:text-xl pb-2">Follow us on</h2>
-                    <div class="flex flex-row gap-1 items-center pt-2">
+                    <div class="flex flex-row gap-2 items-center pt-2">
                         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M24.68 2.08057H3.32C2.96991 2.08057 2.63417 2.21964 2.38662 2.46719C2.13907 2.71473 2 3.05048 2 3.40057V24.7606C2 25.1107 2.13907 25.4464 2.38662 25.6939C2.63417 25.9415 2.96991 26.0806 3.32 26.0806H14.816V16.7806H11.696V13.1806H14.816V10.4806C14.7514 9.84668 14.8262 9.20632 15.0353 8.60441C15.2443 8.0025 15.5825 7.45362 16.0262 6.99626C16.4698 6.5389 17.0081 6.18414 17.6034 5.95685C18.1987 5.72957 18.8364 5.63527 19.472 5.68057C20.406 5.67412 21.3396 5.7222 22.268 5.82457V9.06457H20.36C18.848 9.06457 18.56 9.78457 18.56 10.8286V13.1446H22.16L21.692 16.7446H18.56V26.0806H24.68C24.8533 26.0806 25.025 26.0464 25.1851 25.9801C25.3453 25.9138 25.4908 25.8165 25.6134 25.6939C25.736 25.5714 25.8332 25.4259 25.8995 25.2657C25.9659 25.1056 26 24.9339 26 24.7606V3.40057C26 3.22722 25.9659 3.05557 25.8995 2.89542C25.8332 2.73527 25.736 2.58976 25.6134 2.46719C25.4908 2.34461 25.3453 2.24738 25.1851 2.18105C25.025 2.11471 24.8533 2.08057 24.68 2.08057Z"
