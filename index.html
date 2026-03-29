@@ -111,7 +111,7 @@
     </section>
 
     <section class="w-full relative bg-white">
-        <div class="max-w-7xl lg:max-w-8xl mx-auto px-6 md:px-[60px]">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto px-6 md:px-[60px] md:pt-12">
             <div class="mx-auto py-8 md:pb-12" x-data="{
                 services: [
                     {title: 'Easy to Use', description: 'Beginner friendly interface', img: 'images/services/hand.svg'},
@@ -137,8 +137,7 @@
             <div class="mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-0 overflow-hidden bg-white">
                     <div class="flex flex-col md:max-w-[60%] justify-start">
-                        <h1
-                            class="text-[#213D58] font-semibold text-2xl md:text-3xl leading-8 md:leading-10">
+                        <h1 class="text-[#213D58] font-semibold text-2xl md:text-3xl leading-8 md:leading-10">
                             Simplify Your Billing Process
                         </h1>
                         <p class="text-[#213D58] text-lg font-medium md:text-xl leading-7 md:leading-8 py-6 md:py-auto">
@@ -174,17 +173,22 @@
                 </h2>
                 <div class="grid grid-cols-1 md:grid-cols-5 pt-6 gap-2 md:overflow-hidden bg-white">
                     <template x-for="(item, index) in pricing" :key="index">
-                        <div class="bg-[#FCFDFD] p-3 rounded-md border-2 border-[#E4E4E4] shadow-sm">
-                            <div class="w-12 h-12 flex items-center justify-center mb-2">
-                                <img :src="item.img" />
+                        <div
+                            class="flex flex-col h-full bg-[#FCFDFD] p-3 rounded-md border-2 border-[#E4E4E4] shadow-sm">
+                            <div class="flex-grow">
+                                <div class="w-12 h-12 flex items-center justify-center mb-2">
+                                    <img :src="item.img" />
+                                </div>
+                                <h3 class="text-xl font-bold text-[#4E4E4E] text-md md:text-lg" x-text="item.title">
+                                </h3>
+                                <p class="text-[#4E4E4E] leading-relaxed text-sm md:text-md" x-text="item.description">
+                                </p>
                             </div>
-                            <h3 class="text-xl font-bold text-[#4E4E4E] text-md md:text-lg" x-text="item.title"></h3>
-                            <p class="text-[#4E4E4E] leading-relaxed text-sm md:text-md" x-text="item.description"></p>
                             <div class="mx-auto justify-center w-full pt-3 flex flex-col gap-2">
-                                <h3 class="text-[#25671E] font-semibold text-lg md:text-xl" x-text="item.price"></h3>
-                                    <button
-                                        class="text-[#25671E] hover:bg-[#25671E] hover:text-white font-sm md:text-md w-full py-2 rounded-md border-2 border-[#25671E]">Try
-                                        Now</button>
+                                <h3 class="text-[#25671E] font-semibold text-lg md:text-lg" x-text="item.price"></h3>
+                                <button
+                                    class="text-[#25671E] hover:bg-[#25671E] hover:text-white font-md md:text-md w-full py-2 rounded-md border border-[#25671E]">Try
+                                    Now</button>
                             </div>
                         </div>
                     </template>
@@ -221,7 +225,7 @@
                 </div>
             </div>
 
-            <div class="mx-auto py-8 md:py-12 md:pb-24" x-data="{
+            <div class="mx-auto py-8 md:py-12" x-data="{
                 testimonials:[
                     { name:'User 1', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
                     { name:'User 2', role:'Accountant', description:'Mero Billing made VAT billing and IRD reporting much easier for our business'},
@@ -268,41 +272,47 @@
                     </template>
                 </div>
             </div>
+            <div class="md:h-2"></div>
         </div>
     </section>
 
-    <div class="w-full relative -my-4 pt-8 md:pt-12 bg-[#dee8dd] pb-8">
-        <div class="max-w-7xl lg:max-w-8xl mx-auto px-8 md:px-16">
+    <div class="w-full relative bg-[#dee8dd]">
+        <div class="max-w-7xl lg:max-w-8xl mx-auto py-8 px-8 md:px-16">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4E4E4E] mb-2 tracking-tight">
                 Let's Connect!
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 justify-between items-center pb-2">
-                <h1 class="text-[#1E5218] font-medium text-md md:text-xl pb-3">Have a question about us or need a help
-                    with
-                    your
-                    work? We are here to help.</h1>
-                <div class="flex gap-4 md:justify-end">
-                    <a href="tel:+9779876576545" class="flex text-md md:text-xl">
-                        <svg width="28" height="28" class="h-5 pr-2 md:h-auto" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22.435 17.8034L19.4717 17.4651C19.1233 17.4241 18.7701 17.4627 18.4387 17.5779C18.1073 17.6931 17.8063 17.8818 17.5584 18.1301L15.4117 20.2767C12.1 18.592 9.40812 15.9001 7.72338 12.5884L9.88172 10.4301C10.3834 9.92839 10.6284 9.22839 10.5467 8.51672L10.2084 5.57672C10.1425 5.00749 9.86942 4.48242 9.44125 4.10158C9.01308 3.72075 8.45975 3.51079 7.88672 3.51172H5.86838C4.55005 3.51172 3.45338 4.60839 3.53505 5.92672C4.15338 15.8901 12.1217 23.8467 22.0734 24.4651C23.3917 24.5467 24.4884 23.4501 24.4884 22.1317V20.1134C24.5 18.9351 23.6134 17.9434 22.435 17.8034Z"
-                                fill="#25671E" />
-                        </svg>
-                        <span class="text-[#4E4E4E] text-md md:text-xl">9876576545</span></a>
-                    <a href="tel:18105000323" class="flex">
-                        <svg width="28" height="28" class="h-5 pr-1 md:h-auto" viewBox="0 0 28 28" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M14 2.33325C16.7848 2.33325 19.4555 3.4395 21.4246 5.40863C23.3938 7.37776 24.5 10.0485 24.5 12.8333V19.8333C24.5003 20.5892 24.2559 21.3248 23.8034 21.9303C23.3508 22.5358 22.7144 22.9784 21.9893 23.1921C21.1983 25.4099 17.8617 26.8333 14 26.8333C13.6906 26.8333 13.3938 26.7103 13.175 26.4915C12.9562 26.2728 12.8333 25.976 12.8333 25.6666C12.8333 25.3572 12.9562 25.0604 13.175 24.8416C13.3938 24.6228 13.6906 24.4999 14 24.4999C16.2038 24.4999 18.0623 23.9376 19.0563 23.2458C18.2829 23.0697 17.5923 22.6361 17.0976 22.0161C16.6028 21.3961 16.3334 20.6264 16.3333 19.8333L16.3345 16.2738L16.3392 16.2143C16.3686 15.3073 16.7496 14.4473 17.4017 13.8163C18.0539 13.1853 18.9259 12.8328 19.8333 12.8333H21C21.4095 12.8333 21.8027 12.9033 22.1667 13.0328V12.8333C22.1677 10.6909 21.3269 8.63389 19.8254 7.1057C18.3239 5.57752 16.2821 4.70053 14.14 4.6638C11.998 4.62707 9.92725 5.43353 8.37426 6.90934C6.82128 8.38515 5.91041 10.4121 5.838 12.5533L5.83333 13.0316C6.1985 12.9033 6.59167 12.8333 7 12.8333H8.16667C9.09492 12.8333 9.98516 13.202 10.6415 13.8584C11.2979 14.5148 11.6667 15.405 11.6667 16.3333V19.8333C11.6667 20.7615 11.2979 21.6517 10.6415 22.3081C9.98516 22.9645 9.09492 23.3333 8.16667 23.3333H7C6.07174 23.3333 5.1815 22.9645 4.52513 22.3081C3.86875 21.6517 3.5 20.7615 3.5 19.8333V12.8333C3.5 10.0485 4.60625 7.37776 6.57538 5.40863C8.54451 3.4395 11.2152 2.33325 14 2.33325Z"
-                                fill="#25671E" />
-                        </svg>
-                        <span class="text-[#4E4E4E] text-md md:text-xl">18105000323</span></a>
+
+            <div class="grid grid-cols-1 md:grid-cols-11 items-center gap-6 pb-2">
+
+                <div class="md:col-span-5">
+                    <h1 class="text-[#1E5218] font-medium text-md md:text-lg">
+                        Have a question about us or need help with your work?
+                        <br class="hidden md:block"> We are here to help.
+                    </h1>
+                </div>
+
+                <div class="md:col-span-6 w-full grid md:grid-cols-5 gap-2 shadow-sm p-4 md:p-4 rounded-md">
+                    <div class="col-span-1 md:col-span-2">
+                        <h3 class="text-gray-500 text-md md:text-lg font-medium">Toll-Free (6AM-10PM)</h3>
+                        <a href="tel:18105000323" class="text-md md:text-lg font-bold text-gray-900">18105000323</a>
+                    </div>
+                    <div class="col-span-1 md:col-span-2">
+                        <h2 class="text-gray-800 text-md md:text-lg font-medium">New Account & Billing: <span
+                                class="font-light">1</span></h2>
+                        <h2 class="text-gray-800 text-md md:text-lg font-medium">Complain & Inquiry: <span
+                                class="font-light">3</span></h2>
+                    </div>
+                    <div class="col-span-2 md:col-span-1 pt-2 md:pt-0 md:pl-4">
+                        <h2 class="text-gray-800 text-md md:text-lg font-medium">Support: <span
+                                class="font-light">2</span></h2>
+                        <h2 class="text-gray-800 text-md md:text-lg font-medium">Helpline: <span
+                                class="font-light">0</span></h2>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="w-full py-6 md:py-12 bg-white"></div>
+    <div class="w-full py-6 md:py-8 bg-white"></div>
 
     <footer class="w-full relative px-8 md:px-16 py-12">
         <div class="max-w-7xl lg:max-w-8xl mx-auto">
